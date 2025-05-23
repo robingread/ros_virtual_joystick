@@ -29,12 +29,15 @@ RUN \
   # Install the ROS2 pakcages and colcon
   && apt-get update \
   && apt-get install -y --no-install-recommends \
+    catch2 \
     colcon \
     python3-colcon-common-extensions \
     python3-colcon-clean \
     python3-colcon-cmake \
     python3-colcon-defaults \
     python3-colcon-mixin \
+    ros-${ROS_DISTRO}-ament-cmake-catch2 \
+    ros-${ROS_DISTRO}-catch-ros2 \
     ros-${ROS_DISTRO}-ros-base \
     ros-${ROS_DISTRO}-rqt \
     ros-${ROS_DISTRO}-rqt-gui \
