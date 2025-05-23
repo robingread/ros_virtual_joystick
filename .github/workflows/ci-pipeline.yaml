@@ -1,0 +1,36 @@
+name: CI Testing Pipeline
+
+on:
+  push:
+    branches: ["**"]
+
+jobs:
+    build_and_test:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v3
+
+        - name: Set up Docker Buildx
+          uses: docker/setup-buildx-action@v2
+
+        - name: Get UID
+          id: ids
+          run: |
+            echo "uid=$(id -u)" >> "$GITHUB_OUTPUT"
+
+        - name: Build & Test
+          env:
+            UID: ${{ steps.ids.outputs.uid }}
+            USERNAME: devuser
+          run: |
+            docker compose build ci-testing
+            docker compose run --rm ci-testing
+
+        - name: Upload coverage report artifact
+          uses: actions/upload-artifact@v4
+          with:
+            name: coverage-report
+            path: ${{ github.workspace }}/build/coverage-report
+            if-no-files-found: error
