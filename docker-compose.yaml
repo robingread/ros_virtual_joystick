@@ -24,3 +24,8 @@ services:
     user: ${USERNAME:-devuser}
     working_dir: /project_ws
     command: sleep infinity
+
+  ci-testing:
+    extends: dev
+    container_name: ros-virtual-joystick-ci-testing
+    command: bash -c "./scripts/ci-pipeline.sh"
