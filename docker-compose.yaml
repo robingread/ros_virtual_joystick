@@ -1,7 +1,7 @@
 services:
   dev:
-    container_name: project-dev
-    image: project:dev
+    container_name: ros-virtual-joystick-dev
+    image: ros_virtual_joystick:dev
     build:
       dockerfile: docker/Dockerfile
       context: .
@@ -22,4 +22,5 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ${XAUTHORITY:-/dev/null}:/home/${USERNAME}/.Xauthority
     user: ${USERNAME:-devuser}
+    working_dir: /project_ws
     command: sleep infinity
