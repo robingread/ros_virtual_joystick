@@ -32,5 +32,5 @@ jobs:
           uses: actions/upload-artifact@v4
           with:
             name: coverage-report
-            path: ${{ github.workspace }}/build/coverage-report
+            path: ${{ github.workspace }}/coverage/html
             if-no-files-found: error
