@@ -8,17 +8,22 @@ ENV ROS_DISTRO=${ROS_DISTRO}
 
 # Prerequisites
 RUN \
+  # Install APT dependencies
   apt-get update\
   && apt-get install -y --no-install-recommends \
     build-essential \
     ca-certificates \
     cmake \
     curl \
+    lcov \
     python3-pip \
     software-properties-common \
     sudo \
     wget \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* \
+  # Install Python dependencies
+  && pip3 install --break-system-packages \
+    fastcov
 
 # Install the ROS dependencies
 RUN \
