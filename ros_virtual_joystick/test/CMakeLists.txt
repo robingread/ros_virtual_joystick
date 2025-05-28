@@ -18,5 +18,6 @@ target_link_libraries(${PROJECT_NAME}_test
 # Specify include directories for the test target
 target_include_directories(${PROJECT_NAME}_test PRIVATE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../src>
     $<INSTALL_INTERFACE:include>
 )

@@ -1,4 +1,4 @@
-#include "ros_virtual_joystick/button_group_widget.hpp"
+#include "button_group_widget.hpp"
 
 namespace ros_virtual_joystick {
 ButtonGroup::ButtonGroup(QWidget *parent) : QWidget(parent) {

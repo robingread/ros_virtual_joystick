@@ -4,7 +4,7 @@
 #include <QTest>
 #include <iostream>
 
-#include "ros_virtual_joystick/joystick_graphics_view_widget.hpp"
+#include "joystick_graphics_view_widget.hpp"
 
 namespace ros_virtual_joystick {
 

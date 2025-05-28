@@ -1,5 +1,5 @@
-#include "ros_virtual_joystick/joystick_graphics_view_widget.hpp"
-#include "ros_virtual_joystick/utils.hpp"
+#include "joystick_graphics_view_widget.hpp"
+#include "utils.hpp"
 #include <QMouseEvent>
 #include <cmath>
 #include <iostream>

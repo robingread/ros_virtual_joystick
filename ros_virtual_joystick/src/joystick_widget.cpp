@@ -1,4 +1,4 @@
-#include "ros_virtual_joystick/joystick_widget.hpp"
+#include "joystick_widget.hpp"
 
 namespace ros_virtual_joystick {
 JoystickWidget::JoystickWidget(QWidget *parent, const std::size_t size) : QWidget(parent) {

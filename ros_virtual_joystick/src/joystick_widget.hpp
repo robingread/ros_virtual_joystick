@@ -2,7 +2,7 @@
 
 #include "button_group_widget.hpp"
 #include "joystick_graphics_view_widget.hpp"
-#include "types.hpp"
+#include "ros_virtual_joystick/types.hpp"
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>

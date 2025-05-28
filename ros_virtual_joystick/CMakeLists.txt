@@ -22,13 +22,13 @@ set(CMAKE_AUTOMOC ON)
 # Core library #
 ################
 add_library(${PROJECT_NAME} SHARED
-  include/ros_virtual_joystick/button_group_widget.hpp
-  include/ros_virtual_joystick/joystick_graphics_view_widget.hpp
-  include/ros_virtual_joystick/joystick_widget.hpp
   include/ros_virtual_joystick/widget.hpp
   src/button_group_widget.cpp
+  src/button_group_widget.hpp
   src/joystick_graphics_view_widget.cpp
+  src/joystick_graphics_view_widget.hpp
   src/joystick_widget.cpp
+  src/joystick_widget.hpp
   src/publisher.cpp
   src/utils.cpp
   src/widget.cpp

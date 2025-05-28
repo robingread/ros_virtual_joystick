@@ -1,5 +1,5 @@
 #include <catch2/catch_all.hpp>
-#include "ros_virtual_joystick/utils.hpp"
+#include "utils.hpp"
 
 namespace ros_virtual_joystick {
 

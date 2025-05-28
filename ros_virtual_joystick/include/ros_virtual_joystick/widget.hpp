@@ -1,7 +1,5 @@
 #pragma once
 
-#include "ros_virtual_joystick/button_group_widget.hpp"
-#include "ros_virtual_joystick/joystick_widget.hpp"
 #include "ros_virtual_joystick/types.hpp"
 
 #include <QHBoxLayout>
