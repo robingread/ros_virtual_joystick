@@ -7,6 +7,8 @@ COVERAGE_DIR=coverage
 LCOV_FILE=${COVERAGE_DIR}/coverage.info
 HTML_DIR=${COVERAGE_DIR}/html
 
+export QT_QPA_PLATFORM=offscreen
+
 # Clean and rebuild the project
 colcon clean workspace --yes
 colcon build \
