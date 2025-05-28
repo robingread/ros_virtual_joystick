@@ -93,7 +93,8 @@ RUN \
     less \
     linux-tools-common \
     linux-tools-generic \
-    nano && \
+    nano \
+    tree && \
   rm -rf /var/lib/apt/lists/*
 
 USER ${USERNAME}
