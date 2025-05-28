@@ -1,0 +1,14 @@
+<library path="ros_virtual_joystick_rqt_plugin">
+  <class name="RqtPlugin"
+         type="ros_virtual_joystick::plugins::RqtPlugin"
+         base_class_type="rqt_gui_cpp::Plugin">
+    <description>My RQT plugin in C++</description>
+    <qtgui>
+      <group>
+        <label>Teleoperation</label>
+        <icon type="theme">folder</icon>
+        <statustip>Plugins related to Teleoperation.</statustip>
+      </group>
+    </qtgui>
+  </class>
+</library>
