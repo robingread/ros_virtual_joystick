@@ -48,6 +48,7 @@ RUN \
     ros-${ROS_DISTRO}-rqt-gui \
     ros-${ROS_DISTRO}-rqt-common-plugins \
     ros-${ROS_DISTRO}-rviz2 \
+    ros-${ROS_DISTRO}-sensor-msgs \
   && rm -rf /var/lib/apt/lists/*
 
 # Remove display warnings
