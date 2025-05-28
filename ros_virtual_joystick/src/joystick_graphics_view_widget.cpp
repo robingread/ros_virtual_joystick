@@ -104,7 +104,7 @@ void JoystickGraphicsViewWidget::toggleHoldPosition() {
 void JoystickGraphicsViewWidget::updateState(const QPointF &pos) {
   // Get the normalised coordinate
   const float size = minimumWidth();
-  QPointF pos_norm = utils::normaliseCoorindate(pos, 0.0f, size);
+  QPointF pos_norm = utils::normaliseCoordinate(pos, 0.0f, size);
   pos_norm = utils::clampPositionToCircle(pos_norm);
 
   QPointF marker_pos;

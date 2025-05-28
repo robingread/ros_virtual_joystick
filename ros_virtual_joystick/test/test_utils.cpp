@@ -53,19 +53,19 @@ TEST_CASE("Test the utils::normaliseCoordinate() function") {
 
     WHEN("Calling the function on a coordinate (0, 0)") {
       const QPointF coord(0.0f, 0.0f);
-      const auto result = utils::normaliseCoorindate(coord, min_value, max_value);
+      const auto result = utils::normaliseCoordinate(coord, min_value, max_value);
       THEN("The normalised coordinate should be (-1.0, -1.0)") { REQUIRE(result == QPointF(-1.0f, -1.0f)); }
     }
 
     WHEN("Calling the function on a coordinate (50, 50)") {
       const QPointF coord(50.0f, 50.0f);
-      const auto result = utils::normaliseCoorindate(coord, min_value, max_value);
+      const auto result = utils::normaliseCoordinate(coord, min_value, max_value);
       THEN("The normalised coordinate should be (0.0, 0.0)") { REQUIRE(result == QPointF(0.0f, 0.0f)); }
     }
 
     WHEN("Calling the function on a coordinate (100, 100)") {
       const QPointF coord(100.0f, 100.0f);
-      const auto result = utils::normaliseCoorindate(coord, min_value, max_value);
+      const auto result = utils::normaliseCoordinate(coord, min_value, max_value);
       THEN("The normalised coordinate should be (1.0, 1.0)") { REQUIRE(result == QPointF(1.0f, 1.0f)); }
     }
   }

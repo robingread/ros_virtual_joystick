@@ -20,7 +20,7 @@ float normaliseValue(const float value, const float min_value, const float max_v
   return (n * 2.0) - 1.0;
 }
 
-QPointF normaliseCoorindate(const QPointF &coord, const float min_value, const float max_value) {
+QPointF normaliseCoordinate(const QPointF &coord, const float min_value, const float max_value) {
   const float x_norm = normaliseValue(coord.x(), min_value, max_value);
   const float y_norm = normaliseValue(coord.y(), min_value, max_value);
   return QPointF(x_norm, y_norm);

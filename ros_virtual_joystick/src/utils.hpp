@@ -28,7 +28,7 @@ float normaliseValue(const float value, const float min_value, const float max_v
  * @param max_value The maximum value of value range for each axis.
  * @return The normalised point.
  */
-QPointF normaliseCoorindate(const QPointF &coord, const float min_value, const float max_value);
+QPointF normaliseCoordinate(const QPointF &coord, const float min_value, const float max_value);
 
 /**
  * @brief Clamp a coordinate so that it falls into a normalised circle, where (0, 0) is the centre of the circle.
