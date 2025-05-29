@@ -6,14 +6,14 @@
 
 namespace ros_virtual_joystick {
 namespace plugins {
+namespace rqt_gui {
 
 RqtPlugin::RqtPlugin() : rqt_gui_cpp::Plugin() { setObjectName("RqtPlugin"); }
 
 void RqtPlugin::initPlugin(qt_gui_cpp::PluginContext &context) {
   publisher_ = std::make_unique<Publisher>(*node_);
 
-  const Widget::Config cfg;
-  widget_ = new Widget(cfg);
+  widget_ = new Widget(makeConfig());
 
   context.addWidget(widget_);
 
@@ -32,8 +32,10 @@ void RqtPlugin::onUpdate() {
   publisher_->publishState(state);
 }
 
+}  // namespace rqt_gui
 }  // namespace plugins
 }  // namespace ros_virtual_joystick
 
 #include <pluginlib/class_list_macros.hpp>
-PLUGINLIB_EXPORT_CLASS(ros_virtual_joystick::plugins::RqtPlugin, rqt_gui_cpp::Plugin)
+PLUGINLIB_EXPORT_CLASS(ros_virtual_joystick::plugins::rqt_gui::SinglePadJoystickPlugin, rqt_gui_cpp::Plugin);
+PLUGINLIB_EXPORT_CLASS(ros_virtual_joystick::plugins::rqt_gui::DualPadJoystickPlugin, rqt_gui_cpp::Plugin);

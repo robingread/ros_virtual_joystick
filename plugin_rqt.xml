@@ -1,6 +1,6 @@
 <library path="ros_virtual_joystick_rqt_plugin">
-  <class name="RqtPlugin"
-         type="ros_virtual_joystick::plugins::RqtPlugin"
+  <class name="Single Pad Plugin"
+         type="ros_virtual_joystick::plugins::rqt_gui::SinglePadJoystickPlugin"
          base_class_type="rqt_gui_cpp::Plugin">
     <description>My RQT plugin in C++</description>
     <qtgui>
@@ -9,6 +9,23 @@
         <icon type="theme">folder</icon>
         <statustip>Plugins related to Teleoperation.</statustip>
       </group>
+      <label>Single Pad Joystick</label>
+      <icon type="theme">input-gaming</icon>
+    </qtgui>
+  </class>
+
+  <class name="Dual Pad Plugin"
+         type="ros_virtual_joystick::plugins::rqt_gui::DualPadJoystickPlugin"
+         base_class_type="rqt_gui_cpp::Plugin">
+    <description>My RQT plugin in C++</description>
+    <qtgui>
+      <group>
+        <label>Teleoperation</label>
+        <icon type="theme">folder</icon>
+        <statustip>Plugins related to Teleoperation.</statustip>
+      </group>
+      <label>Dual Pad Joystick</label>
+      <icon type="theme">input-gaming</icon>
     </qtgui>
   </class>
 </library>
