@@ -1,6 +1,12 @@
 <library path="ros_virtual_joystick_rviz_plugin">
+  <class name="Single Pad Joystick"
+         type="ros_virtual_joystick::plugins::rviz::SinglePadJoystickPlugin"
+         base_class_type="rviz_common::Panel">
+    <description>A custom RViz panel.</description>
+  </class>
+
   <class name="Dual Pad Joystick"
-         type="ros_virtual_joystick::plugins::RVizPanel"
+         type="ros_virtual_joystick::plugins::rviz::DualPadJoystickPlugin"
          base_class_type="rviz_common::Panel">
     <description>A custom RViz panel.</description>
   </class>
