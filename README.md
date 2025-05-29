@@ -1,35 +1,19 @@
-# ROS Project Template
+# ros_virtual_joystick
 
-This repo offers up a skeleton for developing ROS2 projects inside a Docker containerised environment.
+All the `sensor_msgs/Joy` data is published on the `/joy` topic.
 
-## Building the Dev Container
+## Launching the standalone node
 
-You man build the `dev` image manually by running:
-
-```bash
-docker compose build dev
-```
-
-Alternatively you can get [`VSCode`](https://code.visualstudio.com/) to build the image by starting vscode in this directory. It should automatically detect the `.devcontainer` directory and offer to open the project in the Devcontainer. If you agree, then the image will be build and the container started.
-
-## Development
-
-### Adding Source Code
-
-To add new source code/packages, you simply att them to the `src` directory.
-
-### Compiling
-
-The project assumes that you're using `colcon` for building and testing the codebase. All the build, install and log files will be stored in the respective top-level `build/`, `install/` and `log/` directories, and these are included in the `.gitignore` file.
-
-To compile code, run:
+A standalone node can be launched by running:
 
 ```bash
-colcon build
+ros2 launch ros_virtual_joystick joystick_node.launch.py
 ```
 
-To clean the workspace run:
+## RQt & RViz Plugins
 
-```bash
-colcon clean workspace --yes
-```
+It is also possible to load the tool in both `rqt_gui` and `rviz2`, meaning that you can build it into existing, more complex GUI setups that utilize more of the ROS ecosystem while reducing the number of windows that you need to have open.
+
+To load into `rqt_gui`, simply open it via the `Plugins/Teleoperation` menu.
+
+To load the panel into `rviz2` select it through the `Panels/Add New Panel` dialogue box.
