@@ -6,7 +6,8 @@ Widget::Impl::Impl(const Widget::Config &cfg, Widget *parent) :
       parent_(parent),
       v_layout_(new QVBoxLayout(parent)),
       joystick_layout_(new QHBoxLayout()),
-      button_group_(new ButtonGroup(parent)) {
+      button_group_(new ButtonGroup(parent)),
+      topic_widget_(new widgets::TopicWidget(parent, QString(cfg.topic.c_str()))) {
   // Setup the Joystick Pads based on the number specified in the config
   joystick_layout_->addStretch();
   const std::size_t pad_count = std::size_t(cfg.layout) + 1;
@@ -21,9 +22,14 @@ Widget::Impl::Impl(const Widget::Config &cfg, Widget *parent) :
   // Setup the vertical layout with the widgets in it.
   v_layout_->addLayout(joystick_layout_);
   v_layout_->addWidget(button_group_, 0, Qt::AlignHCenter);
+  v_layout_->addWidget(topic_widget_);
   v_layout_->addStretch();
 
   QObject::connect(button_group_, &ButtonGroup::stateUpdated, this, &Widget::Impl::onUpdate);
+
+  QObject::connect(topic_widget_, &widgets::TopicWidget::topicUpdated, [&](const QString &topic) {
+    emit parent_->topicUpdated(topic);
+  });
 }
 
 JoystickState Widget::Impl::getState() const {

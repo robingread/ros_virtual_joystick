@@ -2,6 +2,7 @@
 
 #include "button_group_widget.hpp"
 #include "joystick_widget.hpp"
+#include "widgets/topic_widget.hpp"
 #include "ros_virtual_joystick/types.hpp"
 #include "ros_virtual_joystick/widget.hpp"
 
@@ -42,6 +43,7 @@ private:
   QHBoxLayout *joystick_layout_;
 
   ButtonGroup *button_group_;
+  widgets::TopicWidget *topic_widget_;
   std::vector<JoystickWidget *> joysticks_;
 };
 
