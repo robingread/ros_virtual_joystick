@@ -21,6 +21,12 @@ public:
    * @param state Data to publish.
    */
   virtual void publishState(const JoystickState &state) = 0;
+
+  /**
+   * @brief Reset the publisher to publish to a new topic.
+   * @param topic The topic to publish to.
+   */
+  virtual void reset(const std::string &topic) = 0;
 };
 
 /**
@@ -45,6 +51,12 @@ public:
    * @param state Data to publish.
    */
   void publishState(const JoystickState &state) override;
+
+  /**
+   * @brief Reset the publisher to publish to a new topic.
+   * @param topic The topic to publish to.
+   */
+  void reset(const std::string &topic) override;
 
 private:
   rclcpp::Node &node_;
