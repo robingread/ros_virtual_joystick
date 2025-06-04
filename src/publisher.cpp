@@ -2,8 +2,8 @@
 
 namespace ros_virtual_joystick {
 
-Publisher::Publisher(rclcpp::Node &node) :
-      node_(node), publisher_(node.create_publisher<sensor_msgs::msg::Joy>("joy", 10)) {}
+Publisher::Publisher(rclcpp::Node &node, const std::string &topic) :
+      node_(node), publisher_(node.create_publisher<sensor_msgs::msg::Joy>(topic, 10)) {}
 
 Publisher::~Publisher() { publisher_.reset(); }
 

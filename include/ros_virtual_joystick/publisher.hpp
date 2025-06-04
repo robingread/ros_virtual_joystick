@@ -33,7 +33,7 @@ public:
    * @brief Construct the ROS2 publisher object.
    * @param node The ROS node used to create the publisher.
    */
-  Publisher(rclcpp::Node &node);
+  Publisher(rclcpp::Node &node, const std::string &topic = "joy");
 
   /**
    * @brief Deconstructor that will disconnect the publisher.
