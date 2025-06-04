@@ -5,6 +5,7 @@ find_package(Catch2 REQUIRED)
 ament_add_catch2(${PROJECT_NAME}_test
     test_button_group_widget.cpp
     test_joystick_graphics_view_widget.cpp
+    test_topic_widget.cpp
     test_utils.cpp
 )
 
