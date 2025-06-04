@@ -3,7 +3,7 @@
 #include <QSignalSpy>
 #include <QTest>
 
-#include "button_group_widget.hpp"
+#include "widgets/button_group_widget.hpp"
 
 namespace ros_virtual_joystick {
 
