@@ -27,6 +27,7 @@ JoystickGraphicsViewWidget::JoystickGraphicsViewWidget(QWidget *parent, const in
   gradient.setColorAt(0.0, QColor(255, 255, 255));            // Light gray center
   gradient.setColorAt(1.0, QColor(220, 220, 220));            // Dark gray edge
   background_circle_->setBrush(QBrush(gradient));
+  background_circle_->setPen(Qt::NoPen);
 
   QPen pen(Qt::red);
   pen.setStyle(Qt::DashLine);
