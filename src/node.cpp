@@ -11,12 +11,15 @@ int main(int argc, char **argv) {
 
   // Create a ROS node and spin in the background
   auto node = std::make_shared<rclcpp::Node>("joystick_gui_node");
+  const int count = node->declare_parameter("num_pads", 2);
+  const ros_virtual_joystick::Layout layout = static_cast<ros_virtual_joystick::Layout>(count - 1);
+
   std::thread ros_spin_thread([node]() { rclcpp::spin(node); });
 
   // Create the publisher and the widget
   auto publisher = std::make_unique<ros_virtual_joystick::Publisher>(*node);
 
-  const ros_virtual_joystick::Widget::Config cfg{250, ros_virtual_joystick::Layout::DUAL};
+  const ros_virtual_joystick::Widget::Config cfg{250, layout};
   ros_virtual_joystick::Widget widget(cfg);
   widget.show();
 
