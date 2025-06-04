@@ -60,6 +60,8 @@ signals:
    */
   void stateUpdated();
 
+  void topicUpdated(const QString &topic);
+
 private:
   class Impl;
   std::unique_ptr<Impl> impl_;
