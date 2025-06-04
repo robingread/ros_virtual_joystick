@@ -30,6 +30,7 @@ public:
   struct Config {
     std::size_t size = 250;
     Layout layout = Layout::DUAL;
+    std::string topic = "/joy";
   };
 
   /**
