@@ -7,6 +7,7 @@
 #include "widgets/joystick_graphics_view_widget.hpp"
 
 namespace ros_virtual_joystick {
+namespace widgets {
 
 TEST_CASE("JoystickGraphicsViewWidget class") {
   int argc = 0;
@@ -129,4 +130,5 @@ TEST_CASE("JoystickGraphicsViewWidget class") {
   }
 }
 
+}  // namespace widgets
 }  // namespace ros_virtual_joystick

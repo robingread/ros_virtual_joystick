@@ -42,9 +42,9 @@ private:
 
   QHBoxLayout *joystick_layout_;
 
-  ButtonGroup *button_group_;
+  widgets::ButtonGroup *button_group_;
   widgets::TopicWidget *topic_widget_;
-  std::vector<JoystickWidget *> joysticks_;
+  std::vector<widgets::JoystickWidget *> joysticks_;
 };
 
 }  // namespace ros_virtual_joystick

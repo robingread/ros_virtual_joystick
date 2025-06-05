@@ -7,6 +7,7 @@
 #include <vector>
 
 namespace ros_virtual_joystick {
+namespace widgets {
 
 /**
  * @brief The JoystickGraphicsViewWidget class provides a graphical representation of a single 2D joystick. it is
@@ -155,4 +156,6 @@ private:
 
   QPointF state_;
 };
+
+}  // namespace widgets
 }  // namespace ros_virtual_joystick

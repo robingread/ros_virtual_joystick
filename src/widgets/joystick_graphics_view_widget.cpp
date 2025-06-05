@@ -5,6 +5,7 @@
 #include <iostream>
 
 namespace ros_virtual_joystick {
+namespace widgets {
 
 JoystickGraphicsViewWidget::JoystickGraphicsViewWidget(QWidget *parent, const int size) :
       QGraphicsView(parent), dragging_(false), hold_position_(false), axis_tracking_(false) {
@@ -175,4 +176,5 @@ void JoystickGraphicsViewWidget::mouseReleaseEvent(QMouseEvent *event) {
   }
 }
 
+}  // namespace widgets
 }  // namespace ros_virtual_joystick

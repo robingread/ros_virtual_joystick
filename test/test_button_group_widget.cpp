@@ -6,12 +6,13 @@
 #include "widgets/button_group_widget.hpp"
 
 namespace ros_virtual_joystick {
+namespace widgets {
 
 TEST_CASE("ButtonGroup emits signal and updates state correctly") {
   int argc = 0;
   QApplication app(argc, nullptr);  // Required by QWidget
 
-  ros_virtual_joystick::ButtonGroup group;
+  ButtonGroup group;
 
   SECTION("Initial state is all released") {
     auto state = group.getState();
@@ -52,4 +53,5 @@ TEST_CASE("ButtonGroup emits signal and updates state correctly") {
   }
 }
 
+}  // namespace widgets
 }  // namespace ros_virtual_joystick

@@ -5,15 +5,15 @@ namespace ros_virtual_joystick {
 Widget::Impl::Impl(const Widget::Config &cfg, Widget *parent, QVBoxLayout *main_layout_) :
       parent_(parent),
       joystick_layout_(new QHBoxLayout()),
-      button_group_(new ButtonGroup(parent)),
+      button_group_(new widgets::ButtonGroup(parent)),
       topic_widget_(new widgets::TopicWidget(parent, QString(cfg.topic.c_str()))) {
   // Setup the Joystick Pads based on the number specified in the config
   joystick_layout_->addStretch();
   const std::size_t pad_count = std::size_t(cfg.layout) + 1;
   for (std::size_t i = 0; i < pad_count; ++i) {
-    auto *joystick = new JoystickWidget(parent, cfg.size);
+    auto *joystick = new widgets::JoystickWidget(parent, cfg.size);
     joystick_layout_->addWidget(joystick, 0, Qt::AlignHCenter);
-    QObject::connect(joystick, &JoystickWidget::stateUpdated, this, &Widget::Impl::onUpdate);
+    QObject::connect(joystick, &widgets::JoystickWidget::stateUpdated, this, &Widget::Impl::onUpdate);
     joysticks_.push_back(joystick);
   }
   joystick_layout_->addStretch();
@@ -24,7 +24,7 @@ Widget::Impl::Impl(const Widget::Config &cfg, Widget *parent, QVBoxLayout *main_
   main_layout_->addWidget(topic_widget_);
   main_layout_->addStretch();
 
-  QObject::connect(button_group_, &ButtonGroup::stateUpdated, this, &Widget::Impl::onUpdate);
+  QObject::connect(button_group_, &widgets::ButtonGroup::stateUpdated, this, &Widget::Impl::onUpdate);
 
   QObject::connect(topic_widget_, &widgets::TopicWidget::topicUpdated, [&](const QString &topic) {
     emit parent_->topicUpdated(topic);

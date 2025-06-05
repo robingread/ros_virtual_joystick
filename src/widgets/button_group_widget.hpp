@@ -6,6 +6,7 @@
 #include <vector>
 
 namespace ros_virtual_joystick {
+namespace widgets {
 
 /**
  * @brief The ButtonGroup class is the UI Element that contains the main buttons for the virtual joystick interface.
@@ -67,4 +68,5 @@ private:
   std::array<QPushButton *, ButtonCount> buttons_;
 };
 
+}  // namespace widgets
 }  // namespace ros_virtual_joystick

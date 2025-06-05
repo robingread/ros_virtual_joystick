@@ -1,6 +1,8 @@
 #include "button_group_widget.hpp"
 
 namespace ros_virtual_joystick {
+namespace widgets {
+
 ButtonGroup::ButtonGroup(QWidget *parent) : QWidget(parent) {
   layout_ = new QHBoxLayout(this);
 
@@ -25,4 +27,5 @@ std::vector<int> ButtonGroup::getState() const {
 
 void ButtonGroup::onButtonEvent() { emit stateUpdated(); }
 
+}  // namespace widgets
 }  // namespace ros_virtual_joystick

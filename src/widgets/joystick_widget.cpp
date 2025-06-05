@@ -1,6 +1,8 @@
 #include "joystick_widget.hpp"
 
 namespace ros_virtual_joystick {
+namespace widgets {
+
 JoystickWidget::JoystickWidget(QWidget *parent, const std::size_t size) : QWidget(parent) {
   graphics_view_ = new JoystickGraphicsViewWidget(this, size);
 
@@ -42,4 +44,5 @@ JoystickState JoystickWidget::getState() const {
 
 void JoystickWidget::onUpdate() { emit stateUpdated(); }
 
+}  // namespace widgets
 }  // namespace ros_virtual_joystick

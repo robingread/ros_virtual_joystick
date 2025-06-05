@@ -10,6 +10,7 @@
 #include <QWidget>
 
 namespace ros_virtual_joystick {
+namespace widgets {
 
 /**
  * @brief The JoystickWidget provides the Qt based GUI for a virtual/screen joystick.
@@ -66,4 +67,5 @@ private:
   QPushButton *lock_axis_tracking_button_;
 };
 
+}  // namespace widgets
 }  // namespace ros_virtual_joystick
