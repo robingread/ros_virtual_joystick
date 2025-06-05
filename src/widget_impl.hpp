@@ -19,7 +19,7 @@ class Widget::Impl : public QObject {
   Q_OBJECT
 
 public:
-  Impl(const Widget::Config &cfg, Widget *parent);
+  Impl(const Widget::Config &cfg, Widget *parent, QVBoxLayout *main_layout_);
   ~Impl() = default;
 
   /**
@@ -39,7 +39,6 @@ private slots:
 private:
   Widget *parent_;
 
-  QVBoxLayout *v_layout_;
   QHBoxLayout *joystick_layout_;
 
   ButtonGroup *button_group_;

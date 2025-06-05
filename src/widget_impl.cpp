@@ -2,9 +2,8 @@
 
 namespace ros_virtual_joystick {
 
-Widget::Impl::Impl(const Widget::Config &cfg, Widget *parent) :
+Widget::Impl::Impl(const Widget::Config &cfg, Widget *parent, QVBoxLayout *main_layout_) :
       parent_(parent),
-      v_layout_(new QVBoxLayout(parent)),
       joystick_layout_(new QHBoxLayout()),
       button_group_(new ButtonGroup(parent)),
       topic_widget_(new widgets::TopicWidget(parent, QString(cfg.topic.c_str()))) {
@@ -20,10 +19,10 @@ Widget::Impl::Impl(const Widget::Config &cfg, Widget *parent) :
   joystick_layout_->addStretch();
 
   // Setup the vertical layout with the widgets in it.
-  v_layout_->addLayout(joystick_layout_);
-  v_layout_->addWidget(button_group_, 0, Qt::AlignHCenter);
-  v_layout_->addWidget(topic_widget_);
-  v_layout_->addStretch();
+  main_layout_->addLayout(joystick_layout_);
+  main_layout_->addWidget(button_group_, 0, Qt::AlignHCenter);
+  main_layout_->addWidget(topic_widget_);
+  main_layout_->addStretch();
 
   QObject::connect(button_group_, &ButtonGroup::stateUpdated, this, &Widget::Impl::onUpdate);
 
