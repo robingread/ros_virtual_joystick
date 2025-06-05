@@ -1,10 +1,10 @@
 #pragma once
 
-#include "joystick_widget.hpp"
-#include "widgets/topic_widget.hpp"
 #include "ros_virtual_joystick/types.hpp"
 #include "ros_virtual_joystick/widget.hpp"
 #include "widgets/button_group_widget.hpp"
+#include "widgets/joystick_widget.hpp"
+#include "widgets/topic_widget.hpp"
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>
