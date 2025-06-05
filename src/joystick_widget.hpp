@@ -1,8 +1,8 @@
 #pragma once
 
-#include "joystick_graphics_view_widget.hpp"
 #include "ros_virtual_joystick/types.hpp"
 #include "widgets/button_group_widget.hpp"
+#include "widgets/joystick_graphics_view_widget.hpp"
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>

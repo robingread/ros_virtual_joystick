@@ -23,8 +23,6 @@ set(CMAKE_AUTOMOC ON)
 ################
 add_library(${PROJECT_NAME} SHARED
   include/ros_virtual_joystick/widget.hpp
-  src/joystick_graphics_view_widget.cpp
-  src/joystick_graphics_view_widget.hpp
   src/joystick_widget.cpp
   src/joystick_widget.hpp
   src/publisher.cpp
@@ -32,6 +30,7 @@ add_library(${PROJECT_NAME} SHARED
   src/widget.cpp
   src/widget_impl.cpp
   src/widgets/button_group_widget.cpp
+  src/widgets/joystick_graphics_view_widget.cpp
   src/widgets/topic_widget.cpp
 )
 target_include_directories(${PROJECT_NAME} PUBLIC

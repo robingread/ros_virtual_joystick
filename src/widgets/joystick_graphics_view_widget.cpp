@@ -1,5 +1,5 @@
 #include "joystick_graphics_view_widget.hpp"
-#include "utils.hpp"
+#include "../utils.hpp"
 #include <QMouseEvent>
 #include <cmath>
 #include <iostream>
