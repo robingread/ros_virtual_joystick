@@ -60,8 +60,7 @@ target_link_libraries(${PROJECT_NAME}_node
 # RQt GUI Plugin #
 ##################
 add_library(${PROJECT_NAME}_rqt_plugin SHARED
-  include/ros_virtual_joystick/rqt_plugin.hpp
-  src/rqt_plugin.cpp
+  src/plugins/rqt_plugin.cpp
 )
 
 ament_target_dependencies(${PROJECT_NAME}_rqt_plugin

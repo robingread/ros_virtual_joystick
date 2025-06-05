@@ -1,4 +1,4 @@
-#include "ros_virtual_joystick/rqt_plugin.hpp"
+#include "rqt_plugin.hpp"
 
 #include <QVBoxLayout>
 #include <QLabel>
