@@ -44,6 +44,8 @@ public:
    */
   ~Widget() override;
 
+  void setConfig(const Config &config);
+
   /**
    * @brief Get the state of the joystick.
    * @return The overall state of the buttons and axes.
