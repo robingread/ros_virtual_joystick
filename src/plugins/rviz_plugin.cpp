@@ -1,5 +1,5 @@
 #include <rviz_common/display_context.hpp>
-#include "ros_virtual_joystick/rviz_plugin.hpp"
+#include "rviz_plugin.hpp"
 
 namespace ros_virtual_joystick {
 namespace plugins {

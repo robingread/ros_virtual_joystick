@@ -77,8 +77,7 @@ target_link_libraries(${PROJECT_NAME}_rqt_plugin
 # RViz GUI Plugin #
 ##################
 add_library(${PROJECT_NAME}_rviz_plugin SHARED
-  include/ros_virtual_joystick/rviz_plugin.hpp
-  src/rviz_plugin.cpp
+  src/plugins/rviz_plugin.cpp
 )
 
 ament_target_dependencies(${PROJECT_NAME}_rviz_plugin
