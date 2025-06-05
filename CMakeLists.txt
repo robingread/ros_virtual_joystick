@@ -26,11 +26,11 @@ add_library(${PROJECT_NAME} SHARED
   src/publisher.cpp
   src/utils.cpp
   src/widget.cpp
-  src/widget_impl.cpp
   src/widgets/button_group_widget.cpp
   src/widgets/joystick_graphics_view_widget.cpp
   src/widgets/joystick_widget.cpp
   src/widgets/topic_widget.cpp
+  src/widgets/widget_impl.cpp
 )
 target_include_directories(${PROJECT_NAME} PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

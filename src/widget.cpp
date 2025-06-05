@@ -1,5 +1,5 @@
 #include "ros_virtual_joystick/widget.hpp"
-#include "widget_impl.hpp"
+#include "widgets/widget_impl.hpp"
 
 namespace ros_virtual_joystick {
 void clearLayout(QLayout *layout) {
