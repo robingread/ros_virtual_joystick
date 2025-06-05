@@ -2,7 +2,6 @@
 
 #include "ros_virtual_joystick/types.hpp"
 
-#include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QWidget>
 
@@ -63,6 +62,7 @@ signals:
   void topicUpdated(const QString &topic);
 
 private:
+  QVBoxLayout *layout_;
   class Impl;
   std::unique_ptr<Impl> impl_;
 };

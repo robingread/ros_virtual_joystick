@@ -4,7 +4,7 @@
 namespace ros_virtual_joystick {
 
 Widget::Widget(const Config &config, QWidget *parent) :
-      QWidget(parent), impl_(std::make_unique<Widget::Impl>(config, this)) {}
+      QWidget(parent), layout_(new QVBoxLayout(this)), impl_(std::make_unique<Widget::Impl>(config, this, layout_)) {}
 
 Widget::~Widget() { impl_.release(); }
 
