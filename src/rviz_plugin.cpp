@@ -17,11 +17,34 @@ void RVizPanel::onInitialize() {
   publisher_ = std::make_unique<Publisher>(*node);
 
   QObject::connect(widget_.get(), &Widget::stateUpdated, this, &RVizPanel::onUpdate);
+
+  QObject::connect(
+      widget_.get(), &Widget::topicUpdated, [&](const QString &topic) { publisher_->reset(topic.toStdString()); });
+
+  RCLCPP_INFO(node->get_logger(), "On Initialise");
 }
 
 void RVizPanel::onUpdate() {
   const auto state = widget_->getState();
   publisher_->publishState(state);
+}
+
+void RVizPanel::load(const rviz_common::Config &config) {
+  rviz_common::Panel::load(config);
+
+  Widget::Config cfg = makeConfig();
+  QString topic;
+  if (config.mapGetString("topic", &topic)) {
+    cfg.topic = topic.toStdString();
+  }
+  widget_->setConfig(cfg);
+}
+
+void RVizPanel::save(rviz_common::Config config) const {
+  rviz_common::Panel::save(config);
+
+  const QString topic = QString::fromStdString(publisher_->getTopic());
+  config.mapSetValue("topic", topic);
 }
 
 }  // namespace rviz

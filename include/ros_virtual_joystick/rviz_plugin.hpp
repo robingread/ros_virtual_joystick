@@ -28,6 +28,10 @@ public:
    */
   void onInitialize() override;
 
+  void load(const rviz_common::Config &config) override;
+
+  void save(rviz_common::Config config) const override;
+
 public slots:
   /**
    * @brief Callback run when the the Joystick GUI has a state change.
