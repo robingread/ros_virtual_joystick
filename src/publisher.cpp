@@ -1,4 +1,4 @@
-#include "ros_virtual_joystick/publisher.hpp"
+#include "publisher.hpp"
 
 namespace ros_virtual_joystick {
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ros_virtual_joystick/widget.hpp"
-#include "ros_virtual_joystick/publisher.hpp"
+#include "../publisher.hpp"
 #include <memory>
 #include <rviz_common/panel.hpp>
 

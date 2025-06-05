@@ -1,7 +1,7 @@
 #include <QApplication>
 #include <QTimer>
 #include "ros_virtual_joystick/widget.hpp"
-#include "ros_virtual_joystick/publisher.hpp"
+#include "publisher.hpp"
 #include <rclcpp/rclcpp.hpp>
 
 int main(int argc, char **argv) {

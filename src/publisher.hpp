@@ -1,6 +1,6 @@
 #pragma once
 
-#include "types.hpp"
+#include "ros_virtual_joystick/types.hpp"
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/joy.hpp>
 
