@@ -8,6 +8,8 @@ from launch_ros.actions import Node
 
 def generate_launch_description() -> LaunchDescription:
     num_pads = LaunchConfiguration("num_pads")
+    joy_topic = LaunchConfiguration("joy_topic")
+
     return LaunchDescription(
         [
             DeclareLaunchArgument(
@@ -16,12 +18,17 @@ def generate_launch_description() -> LaunchDescription:
                 description="Number of pads use. Acceptable values are [1, 2].",
                 choices=["1", "2"],
             ),
+            DeclareLaunchArgument(
+                "joy_topic",
+                default_value="/joy",
+                description="Topic to publish the joy data to.",
+            ),
             Node(
                 package="ros_virtual_joystick",
                 executable="ros_virtual_joystick_node",
                 name="ros_virtual_joystick",
                 output="screen",
-                parameters=[{"num_pads": num_pads}],
+                parameters=[{"num_pads": num_pads}, {"joy_topic": joy_topic}],
             ),
         ]
     )
