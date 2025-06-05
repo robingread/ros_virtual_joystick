@@ -134,6 +134,10 @@ void JoystickGraphicsViewWidget::updateState(const QPointF &pos) {
 void JoystickGraphicsViewWidget::mousePressEvent(QMouseEvent *event) {
   QGraphicsView::mousePressEvent(event);
 
+  if (event->button() != Qt::LeftButton) {
+    return;
+  }
+
   if (dragging_) {
     return;
   }
@@ -155,6 +159,10 @@ void JoystickGraphicsViewWidget::mouseMoveEvent(QMouseEvent *event) {
 
 void JoystickGraphicsViewWidget::mouseReleaseEvent(QMouseEvent *event) {
   QGraphicsView::mouseReleaseEvent(event);
+
+  if (event->button() != Qt::LeftButton) {
+    return;
+  }
 
   if (!dragging_) {
     return;
