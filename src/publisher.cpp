@@ -18,6 +18,8 @@ void Publisher::publishState(const JoystickState &state) {
   publisher_->publish(msg);
 }
 
+std::string Publisher::getTopic() const { return publisher_->get_topic_name(); }
+
 void Publisher::reset(const std::string &topic) {
   publisher_.reset();
   publisher_ = node_.create_publisher<sensor_msgs::msg::Joy>(topic, 10);

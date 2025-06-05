@@ -16,6 +16,8 @@ public:
    */
   ~PublisherBase() = default;
 
+  virtual std::string getTopic() const = 0;
+
   /**
    * @brief Publish the JoystickState data.
    * @param state Data to publish.
@@ -45,6 +47,8 @@ public:
    * @brief Deconstructor that will disconnect the publisher.
    */
   ~Publisher();
+
+  std::string getTopic() const override;
 
   /**
    * @brief Publish the JoystickState data.
