@@ -18,6 +18,9 @@ void RqtPlugin::initPlugin(qt_gui_cpp::PluginContext &context) {
   context.addWidget(widget_);
 
   QObject::connect(widget_, &Widget::stateUpdated, this, &RqtPlugin::onUpdate);
+
+  QObject::connect(
+      widget_, &Widget::topicUpdated, [&](const QString &topic) { publisher_->reset(topic.toStdString()); });
 }
 
 RqtPlugin::~RqtPlugin() {}
@@ -25,6 +28,21 @@ RqtPlugin::~RqtPlugin() {}
 void RqtPlugin::shutdownPlugin() {
   widget_.clear();
   publisher_.reset();
+}
+
+void RqtPlugin::saveSettings(qt_gui_cpp::Settings & /*plugin_settings*/, qt_gui_cpp::Settings &instance_settings)
+    const {
+  const QString topic = QString::fromStdString(publisher_->getTopic());
+  instance_settings.setValue("topic", topic);
+}
+
+void RqtPlugin::restoreSettings(
+    const qt_gui_cpp::Settings & /*plugin_settings*/,
+    const qt_gui_cpp::Settings &instance_settings) {
+  Widget::Config config = makeConfig();
+  const auto topic = instance_settings.value("topic", QString::fromStdString(config.topic));
+  config.topic = topic.toString().toStdString();
+  widget_->setConfig(config);
 }
 
 void RqtPlugin::onUpdate() {
