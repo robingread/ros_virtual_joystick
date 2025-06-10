@@ -1,8 +1,8 @@
 name: CI Testing Pipeline
 
 on:
-  push:
-    branches: ["**"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
     build_and_test:
