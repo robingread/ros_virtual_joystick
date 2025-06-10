@@ -41,8 +41,24 @@ public:
    */
   void shutdownPlugin() override;
 
+  /**
+   * @brief Save the RQt GUI settings.
+   *
+   * This is used when saving a new RQt perspective.
+   *
+   * @param plugin_settings Settings for the plugin in general.
+   * @param instance_settings Settings that are specific to this instance.
+   */
   void saveSettings(qt_gui_cpp::Settings &plugin_settings, qt_gui_cpp::Settings &instance_settings) const override;
 
+  /**
+   * @brief Load the RQt GUI setting.
+   *
+   * This is used when loading a saved RQt perspective.
+   *
+   * @param plugin_settings Settings for the plugin in general.
+   * @param instance_settings Settings that are specific to this instance.
+   */
   void restoreSettings(const qt_gui_cpp::Settings &plugin_settings, const qt_gui_cpp::Settings &instance_settings)
       override;
 
