@@ -5,9 +5,9 @@
     <description>My RQT plugin in C++</description>
     <qtgui>
       <group>
-        <label>Teleoperation</label>
+        <label>Joystick</label>
         <icon type="theme">folder</icon>
-        <statustip>Plugins related to Teleoperation.</statustip>
+        <statustip>Plugins related to Joysticks.</statustip>
       </group>
       <label>Single Pad Joystick</label>
       <icon type="theme">input-gaming</icon>
@@ -20,9 +20,9 @@
     <description>My RQT plugin in C++</description>
     <qtgui>
       <group>
-        <label>Teleoperation</label>
+        <label>Joystick</label>
         <icon type="theme">folder</icon>
-        <statustip>Plugins related to Teleoperation.</statustip>
+        <statustip>Plugins related to Joysticks.</statustip>
       </group>
       <label>Dual Pad Joystick</label>
       <icon type="theme">input-gaming</icon>
