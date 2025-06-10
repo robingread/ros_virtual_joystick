@@ -7,7 +7,6 @@
 
 namespace ros_virtual_joystick {
 
-// TODO: Should this class implement a PImpl pattern to hide the exact details of how this works form the end user?
 /**
  * @brief Widget that provdes a Qt based GUI that provides a single or dual pad joystick and set of buttons.
  *
@@ -61,6 +60,13 @@ signals:
    */
   void stateUpdated();
 
+  /**
+   * @brief Signal emitted when there is an update to the ROS topic and a reconnection has been requested.
+   *
+   * The intention is the a listener of this signal handles setting up a new Publisher on the specified topic.
+   *
+   * @param topic The name of the ROS topic.
+   */
   void topicUpdated(const QString &topic);
 
 private:
