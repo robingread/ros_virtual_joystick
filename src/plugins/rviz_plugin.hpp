@@ -28,8 +28,16 @@ public:
    */
   void onInitialize() override;
 
+  /**
+   * @brief Load the RViz panel configuration for this class
+   * @param config Configuration object to read from.
+   */
   void load(const rviz_common::Config &config) override;
 
+  /**
+   * @brief Save the RViz panel configuration for this class
+   * @param config Configuration object to populate and save.
+   */
   void save(rviz_common::Config config) const override;
 
 public slots:
