@@ -30,9 +30,15 @@ All the `sensor_msgs/Joy` data is published on the `/joy` topic.
 
 To load into `rqt_gui`, simply open it via the `Plugins/Teleoperation` menu.
 
+![Loading the RQt GUI Plugins](docs/rqt-plugin-example.gif)
+
 To load the panel into `rviz2` select it through the `Panels/Add New Panel` dialogue box.
 
+![Loading the RViz Plugins](docs/rviz-plugin-example.gif)
+
 ## Axis Mapping
+
+The axis/button values are encoded and mapped to the `sensor_msgs/Joy` message data as follows:
 
 | Axis | Direction | Value |
 |--|--|--|
@@ -43,7 +49,7 @@ To load the panel into `rviz2` select it through the `Panels/Add New Panel` dial
 
 Each button will hold the value `1` wen pressed and `0` when not pressed.
 
-The joystick and button values are encoded in the Joy message as follows:
+The joystick and button values are added in the Joy message as follows:
 
 - Joy axes: `[Lx, Ly, Rx, Ry]`
 - Joy buttons: `[A, B, C, D]`
